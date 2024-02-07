@@ -28,3 +28,13 @@ st.subheader(NumF[1])
 dtSex=[NumM[1],NumF[1]]
 dtSexd=pd.DataFrame(dtSex,index=["ชาย","หญิง"])
 st.bar_chart(dtSexd)
+
+import matplotlib.pyplot as plt
+labels = 'man', 'woman'
+sizes = [NumM[1],NumF[1]]
+explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+st.pyplot(fig1)
